@@ -43,13 +43,7 @@ var bio = {
 	}
 	}
 };
-
 bio.show();
-
-
-
-
-
 
 var work = {
 	"jobs": [
@@ -60,27 +54,28 @@ var work = {
 		"location": "Peoria, AZ",
 		"description": "Learn web-developing through Udacity, carry out tasks, use html and css to create web pages, etc."
 	}
-	]
-}
+	],
 
-function displayWork(){
-	for (job in work.jobs)
-	$("#workExperience").append(HTMLworkStart);
+	"display": function(){
+		for (job in work.jobs){
+		$("#workExperience").append(HTMLworkStart);
 
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-	$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedEmployerTitle);
 
-	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	$(".work-entry:last").append(formattedDates);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
 
-	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-	$(".work-entry:last").append(formattedDescription);
-}
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+	}
+	}
+};
+work.display();	
 
-displayWork();
 
 
 var projects = {
@@ -132,10 +127,9 @@ var education = {
 		"dates": "2015",
 		"url": "http://www.udacity.com"
 	}
-    ]
-}
+    ],
 
-education.display = function(){
+	"display": function(){
 	for (var school in education.schools){
 		$("#education").append(HTMLschoolStart);
 			var formattedName= HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -160,9 +154,21 @@ education.display = function(){
 			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 			$(".education-entry:last").append(formattedURL);
 		}
+	}
 };
-
 education.display();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 google.maps.event.addListener(marker, 'click', function(){
