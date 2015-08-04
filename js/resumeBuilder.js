@@ -168,12 +168,18 @@ education.display();
 
 $('#mapDiv').append(googleMap);
 
+window.addEventListener('load', initializeMap);
 
-/*google.maps.event.addListener(marker, 'click', function(){
+//window.addEventListener('resize', function(e) {
+ // Make sure the map bounds get updated on page resize
+// map.fitBounds(mapBounds);
+//});
+
+google.maps.event.addListener(marker, 'click', function(){
 	infowindow.open(map, marker);
 });
 
-function locationizer(work_obj) {
+/*function locationizer(work_obj) {
     var locationArray=[];
     for (var job in work_obj.jobs) {
      var newLocation = work_obj.jobs[job].location;
