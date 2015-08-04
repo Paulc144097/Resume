@@ -18,6 +18,17 @@ h6 {
   overflow: auto;
 }
 
+.topbox{
+  height: 10px;
+  width: 100%;
+  color: #484848;
+  background-color: #484848;
+}
+
+.role-text{
+  font-size: 18px;
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
@@ -165,6 +176,15 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px;
+}
+
+.flex-box2 {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0px;
 }
 
 .center-content {
