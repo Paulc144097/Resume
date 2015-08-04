@@ -175,9 +175,9 @@ window.addEventListener('load', initializeMap);
 // map.fitBounds(mapBounds);
 //});
 
-google.maps.event.addListener(marker, 'click', function(){
-	infowindow.open(map, marker);
-});
+//google.maps.event.addListener(marker, 'click', function(){
+//	infowindow.open(map, marker);
+//});
 
 /*function locationizer(work_obj) {
     var locationArray=[];
