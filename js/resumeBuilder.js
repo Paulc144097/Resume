@@ -9,9 +9,9 @@ var bio = {
 		"github": "paulc144097"
 	},
 	"pictureURL"  : "images/lights.jpg",
-	"welcomeMsg" : "Hey, welcome to my resume page!",
+	"welcomeMsg" : "Hello, welcome to my resume page!",
 	"skills": [
-		"sleeping, eating, soccer-ing, guitar-ing, coding"
+		"HTML and CSS", "Javascript", "Sleeping", "Eating", "Doing", "Nothing"
 	],
 
 	"show": function(){
@@ -32,14 +32,19 @@ var bio = {
 	    $("#topContacts").append(formattedGithub);
 
 	if(bio.skills.length > 0) {
-		$("#header").append(HTMLskillsStart);
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-		$("#skills").append(formattedSkill);
-		formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-		$("#skills").append(formattedSkill);
-		formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-		$("#skills").append(formattedSkill);
-		formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	    $("#header").append(HTMLskillsStart);
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
+        $("#skills").append(formattedSkill);
 	}
 	}
 };
@@ -79,10 +84,10 @@ work.show();
 var projects = {
 	"projects": [
 	{
-		"title": "PO:About me",
+		"title": "Profile Page",
 		"dates": "July 2015",
-		"description": "An about me page created with basic html and css.",
-		"images": ["http://placehold.it/350x150"]
+		"description": "A personal responsive profile page created with html, css, and bootstrap.",
+		"images": ["http://i57.tinypic.com/2dcfqyv.png"]
 	}
 	]
 }
@@ -162,20 +167,34 @@ education.display();
 
 
 
-
-
-
-
-
-
-
-
-
+/*
 google.maps.event.addListener(marker, 'click', function(){
 	infowindow.opem(map, marker);
 });
 
+function locationizer(work_obj) {
+    var locationArray=[];
+    for (var job in work_obj.jobs) {
+     var newLocation = work_obj.jobs[job].location;
+        locationArray.push(newLocation);
+    }
+    return locationArray;
+}
+
+//console.log(locationizer(work));
+
+function inName(name) {
+	name = name.trim().split(" ");
+    //console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name[0] +" "+name[1];
+}
+
+$('#main' ).append(internationalizeButton);
 $("#mapDiv").append(googleMap);
+
+
 /*function inName(name){
 	name = name.trim().split(" ");
 	console.log(name);

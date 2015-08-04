@@ -45,13 +45,12 @@ h3 {
   color: #999;
   line-height: 100%;
   margin-left: 20px;
+  margin-bottom: -15px;
 }
 
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+.h4 {
+margin-left: 20px;
+padding-left: 5%;
 }
 
 h2,
@@ -61,7 +60,6 @@ h5 {
   padding:10px 5%;
 
 }
-
 
 .date-text {
   font-style: italic;
@@ -100,8 +98,22 @@ a {
   display: block;
 }
 
+.a2{
+  color: #1199c3;
+  text-decoration: none;
+  margin-top: 0px;
+  display: block;
+  font-size: 15px;
+}
+.a3{
+  color: #1199c3;
+  text-decoration: none;
+  margin-top: 5px;
+  display: block;
+  font-size: 15px;
+}
 .welcome-message {
-  /*font-style: italic;*/
+  font-style: italic;
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
@@ -152,7 +164,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 20px;
 }
 
 .center-content {
@@ -171,6 +183,8 @@ ul {
 }
 
 img {
+  max-height: 200px;
+  max-width: 300px;
   padding: 10px;
 }
 
