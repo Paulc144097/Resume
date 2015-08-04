@@ -30,6 +30,8 @@ var bio = {
 	    $("#topContacts").append(formattedEmail);
 	    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	    $("#topContacts").append(formattedGithub);
+	    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	    $("#topContacts").append(formattedLocation);
 
 	if(bio.skills.length > 0) {
 	    $("#header").append(HTMLskillsStart);
@@ -164,12 +166,11 @@ var education = {
 education.display();
 
 
+$('#mapDiv').append(googleMap);
 
 
-
-/*
-google.maps.event.addListener(marker, 'click', function(){
-	infowindow.opem(map, marker);
+/*google.maps.event.addListener(marker, 'click', function(){
+	infowindow.open(map, marker);
 });
 
 function locationizer(work_obj) {
@@ -181,21 +182,8 @@ function locationizer(work_obj) {
     return locationArray;
 }
 
-//console.log(locationizer(work));
-
-function inName(name) {
-	name = name.trim().split(" ");
-    //console.log(name);
-    name[1] = name[1].toUpperCase();
-    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
-    return name[0] +" "+name[1];
-}
-
-$('#main' ).append(internationalizeButton);
-$("#mapDiv").append(googleMap);
-
-
-/*function inName(name){
+/*$('#main').append(internationalizeButton);
+function inName(name){
 	name = name.trim().split(" ");
 	console.log(name);
 	name[1] = name[1].toUpperCase();
@@ -204,17 +192,15 @@ $("#mapDiv").append(googleMap);
 
 	return name[0] +" "+name[1];
 }
-$('#main').append(internationalizeButton);
-*/
 
 /*$(document).click(function(loc) {
 	var x = loc.pageX;
 	var y = loc.pageY;
 
 	logClicks(x,y);
-});*/
+});
 
-/*var charEscape = function(_html) {
+var charEscape = function(_html) {
     var newHTML = _html;
 
     newHTML = _html.replace(/</g, "&lt;");
