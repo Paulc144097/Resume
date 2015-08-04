@@ -3,7 +3,7 @@ var bio = {
 	"age" : 18,
 	"role" : "web developer",
 	"contacts": {
-		"mobile": "623-225-****",
+		"mobile": "623-555-5555",
 		"email": "pmchua@asu.edu",
 		"location": "Phoenix, AZ",
 		"github": "paulc144097"
@@ -56,7 +56,7 @@ var work = {
 	}
 	],
 
-	"display": function(){
+	"show": function(){
 		for (job in work.jobs){
 		$("#workExperience").append(HTMLworkStart);
 
@@ -74,7 +74,7 @@ var work = {
 	}
 	}
 };
-work.display();	
+work.show();	
 
 
 
@@ -110,20 +110,22 @@ projects.display = function() {
 	}
   }
 }
-
 projects.display();
 
 var education = {
-	"school": {
+	"schools": [
+	{
 		"name" : "Arizona State University",
 		"location": "Tempe, AZ",
 		"major": "Biomedical Engineering",
 		"dates": "2014-current",
-		"url": "http://asu.edu"
-	},
+		"url": "http://www.asu.edu"
+	}
+	],
 	"online": [
 	{
-		"name": "Udacity",
+		"title": "Front End Web Developer",
+		"school": "Udacity",
 		"dates": "2015",
 		"url": "http://www.udacity.com"
 	}
@@ -133,7 +135,7 @@ var education = {
 	for (var school in education.schools){
 		$("#education").append(HTMLschoolStart);
 			var formattedName= HTMLschoolName.replace("%data%", education.schools[school].name);
-			$(".education-entry:last").append(formattedNajor);
+			$(".education-entry:last").append(formattedName);
 			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 			$(".education-entry:last").append(formattedLocation);
 			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
@@ -144,14 +146,16 @@ var education = {
 		}
 		
 		$("#education").append(HTMLonlineClasses);
- 
-		for (var course in education.onlineCourses) {
+
+		for (var course in education.online) {
 			$("#education").append(HTMLonlineStart);	
-			var formattedSchool= HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-			$(".education-entry:last").append(formattedSchool);
-			var formattedSchoolDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+			var formattedTitle = HTMLonlineTitle.replace("%data%", education.online[course].title);
+			var formattedSchool= HTMLonlineSchool.replace("%data%", education.online[course].school);
+			var formattedOnlineTitle = formattedTitle + formattedSchool;
+			$(".education-entry:last").append(formattedOnlineTitle);
+			var formattedSchoolDates = HTMLonlineDates.replace("%data%", education.online[course].dates);
 			$(".education-entry:last").append(formattedSchoolDates);
-			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+			var formattedURL = HTMLonlineURL.replace("%data%", education.online[course].url);
 			$(".education-entry:last").append(formattedURL);
 		}
 	}
